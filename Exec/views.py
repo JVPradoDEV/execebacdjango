@@ -1,4 +1,6 @@
 from django.http import HttpResponse
+from django.views import generic
 
-def post_view(request):
-    return HttpResponse("Hello World")
+class PostView(generic.View):
+    def get(self, request, *args, **kwargs):
+        return HttpResponse('Hello World')
